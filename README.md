@@ -2,8 +2,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=3500&pause=1000&color=0A66C2&center=true&vCenter=true&width=900&lines=SUMMER+PEP+2026;Data+Structures+%26+Algorithms;Interview+Preparation+Repository;Problem+Solving+Journey" alt="Typing SVG" />
 </p>
 
-<h1 align="center"><b>SUMMER-PEP-26</b></h1>
-
 <p align="center">
 A structured collection of <b>Data Structures and Algorithms</b> solutions implemented during the Summer Preparation Program (PEP-26). This repository reflects consistent practice, clean coding standards, and interview-oriented problem solving.
 </p>
