@@ -1,3 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){ vector<int>a={1,3}; vector<int>b={2}; if(a.size()>b.size()) swap(a,b); int m=a.size(),n=b.size(); int total=(m+n+1)/2; int l=0,r=m; while(l<=r){ int i=(l+r)/2; int j=total-i; int left1=i? a[i-1]:INT_MIN; int left2=j? b[j-1]:INT_MIN; int right1=i<m? a[i]:INT_MAX; int right2=j<n? b[j]:INT_MAX; if(left1<=right2 && left2<=right1){ if((m+n)%2) cout<<max(left1,left2); else cout<<((long long)max(left1,left2)+min(right1,right2))/2; return 0; } if(left1>right2) r=i-1; else l=i+1; } }
+int main() {
+  vector<int> a = {1, 3};
+  vector<int> b = {2};
+  if (a.size() > b.size()) swap(a, b);
+  int m = a.size(), n = b.size();
+  int total = (m + n + 1) / 2;
+  int l = 0, r = m;
+  while (l <= r) {
+    int i = (l + r) / 2;
+    int j = total - i;
+    int left1 = i ? a[i - 1] : INT_MIN;
+    int left2 = j ? b[j - 1] : INT_MIN;
+    int right1 = i < m ? a[i] : INT_MAX;
+    int right2 = j < n ? b[j] : INT_MAX;
+    if (left1 <= right2 && left2 <= right1) {
+      if ((m + n) % 2)
+        cout << max(left1, left2);
+      else
+        cout << ((long long)max(left1, left2) + min(right1, right2)) / 2;
+      return 0;
+    }
+    if (left1 > right2)
+      r = i - 1;
+    else
+      l = i + 1;
+  }
+}

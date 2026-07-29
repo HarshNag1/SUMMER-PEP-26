@@ -1,3 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){ vector<int>a={-1,0,1,2,-1,-4}; sort(a.begin(),a.end()); vector<array<int,3>>res; for(int i=0;i<a.size();++i){ if(i&&a[i]==a[i-1]) continue; int l=i+1,r=a.size()-1; while(l<r){ int sum=a[i]+a[l]+a[r]; if(sum==0){ res.push_back({a[i],a[l],a[r]}); while(l<r&&a[l]==a[l+1]) ++l; while(l<r&&a[r]==a[r-1]) --r; ++l; --r; } else if(sum<0) ++l; else --r; } } cout<<res.size(); }
+int main() {
+  vector<int> a = {-1, 0, 1, 2, -1, -4};
+  sort(a.begin(), a.end());
+  vector<array<int, 3>> res;
+  for (int i = 0; i < a.size(); ++i) {
+    if (i && a[i] == a[i - 1]) continue;
+    int l = i + 1, r = a.size() - 1;
+    while (l < r) {
+      int sum = a[i] + a[l] + a[r];
+      if (sum == 0) {
+        res.push_back({a[i], a[l], a[r]});
+        while (l < r && a[l] == a[l + 1]) ++l;
+        while (l < r && a[r] == a[r - 1]) --r;
+        ++l;
+        --r;
+      } else if (sum < 0)
+        ++l;
+      else
+        --r;
+    }
+  }
+  cout << res.size();
+}
