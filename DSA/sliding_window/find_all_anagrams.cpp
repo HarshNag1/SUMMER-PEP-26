@@ -1,0 +1,3 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){ string s="cbaebabacd",p="abc"; vector<int>res; array<int,26>need={},window={}; for(char c:p) need[c-'a']++; int left=0,right=0,count=0; while(right<s.size()){ int idx=s[right++]-'a'; if(window[idx]<need[idx]) count++; window[idx]++; if(right-left>p.size()){ int lid=s[left++]-'a'; if(window[lid]<=need[lid]) count--; window[lid]--; } if(count==p.size()) res.push_back(left); } for(int x:res) cout<<x<<" "; }

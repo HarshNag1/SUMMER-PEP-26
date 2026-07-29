@@ -1,0 +1,3 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){ vector<int>a={8,4,2,1}; int n=a.size(); vector<int>tmp=a; sort(tmp.begin(),tmp.end()); for(int&i:a) i=lower_bound(tmp.begin(),tmp.end(),i)-tmp.begin()+1; vector<int>f(n+1); auto upd=[&](int i){ for(;i<=n;i+=i&-i) f[i]++; }; auto query=[&](int i){ int s=0; for(;i;i-=i&-i) s+=f[i]; return s; }; long long inv=0; for(int i=n-1;i>=0;--i){ inv+=query(a[i]-1); upd(a[i]); } cout<<inv; }

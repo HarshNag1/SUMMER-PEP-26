@@ -1,0 +1,3 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){ int numCourses=2; vector<pair<int,int>>pr={{1,0}}; vector<vector<int>>adj(numCourses); vector<int>ind(numCourses); for(auto&p:pr){ adj[p.second].push_back(p.first); ind[p.first]++; } queue<int>q; for(int i=0;i<numCourses;++i) if(ind[i]==0) q.push(i); int seen=0; while(!q.empty()){ int u=q.front(); q.pop(); seen++; for(int v:adj[u]) if(--ind[v]==0) q.push(v); } cout<<(seen==numCourses?"true":"false"); }
